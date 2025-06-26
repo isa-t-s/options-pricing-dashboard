@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import options, market
+from app.routers import options
 from app.config import settings
 
 # Instantiates FastAPI app
@@ -21,7 +21,6 @@ app.add_middleware(
 
 # Include routers
 app.include_router(options.router, prefix="/api/options", tags=["options"])
-app.include_router(market.router, prefix="/api/market", tags=["market"])
 
 # Defines root GET endpoint
 @app.get("/")

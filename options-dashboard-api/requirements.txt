@@ -5,6 +5,7 @@ psycopg[binary]>=3.2.2
 alembic==1.12.1
 python-dotenv==1.0.0
 pydantic>=2.8.0
+pydantic-settings>=2.0.0
 httpx==0.25.2
 redis==5.0.1
 pytest==7.4.3
