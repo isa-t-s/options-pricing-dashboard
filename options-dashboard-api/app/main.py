@@ -6,8 +6,10 @@ from app.config import settings
 # Instantiates FastAPI app
 app = FastAPI(
     title="Options Pricing API",
-    description="Multi-model options pricing and Greeks calculation",
-    version="1.0.0"
+    description="Multi-model options pricing and Greeks calculation API",
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
 )
 
 # Configure CORS
@@ -30,4 +32,7 @@ async def root():
 # Health check endpoint
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    return {
+        "status": "healthy",
+        "models_available": ["black_scholes", "binomial", "monte_carlo"]
+    }
